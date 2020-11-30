@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+
+  vsftpd:
+    image: fauria/vsftpd
+    container_name: vsftpd
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        USER_ID: 1000
+        GROUP_ID: 1000
+    restart: always
+    ports:
+      - 0.0.0.0:21:21
+    volumes:
+      - /FTP:/home/vsftpd
+      - /FTP/logs:/var/log/vsftpd
+    environment:
+      - "FTP_USER=itadm"
+      - "FTP_PASS=1qazXSW@3edc"

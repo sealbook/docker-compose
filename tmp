@@ -1,0 +1,130 @@
+
+useradd -d /home/itadm -s /bin/bash -g root itadm
+usermod -aG sudo itadm
+
+docker run -d -p 9000:9000 --restart=always --name portainer -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer
+
+
+find /nfs4vm/osticket_db/ -type f -name "*.sql" -mtime +7 -exec rm '{}' \
+
+oldDate=`date --date='8 day ago' +%Y%m%d`;
+
+chown -R www-data:www-data /zvol/nas/data/chtseng.neural
+
+#echo `rm -rf database_dump_$oldDate*`;
+
+echo '$oldDate*';
+
+echo "刪除$oldDate的備份成功"
+
+find /nfs4vm/nextcloud_db/ -type f -name "*.sql" -mtime +5 | xargs  /bin/rm -f
+
+tar -cvf /mnt/pve/nfs4vm/HCIconf_bak/$(date '+%Y%m%d').tar /etc/pve/nodes/HCI/qemu-server 
+
+/etc/pve/nodes/HCI/qemu-server
+
+/mnt/pve/nfs4vm/HCIconf_bak
+/usr/bin/tar
+
+Connect-VIServer -Server 192.168.10.76 -User administrator -Password 1qaz#EDC
+
+tar -xvf /nfs4vm/HCIconf_bak/20200803.tar -c /tmp/HCI
+
+=IFS(C2="G",B2*1024*1024,C2="M",B2*1024,C2="K",B2,C2=0,"0",C2="",0)
+
+=TEXT(I2,"hh:mm")
+
+=DATE(MID(K2,1,4),MID(F2,1,1),MID(H2,1,2))+TIME(MID(J2,1,2),MID(J2,4,2),0)
+ 
+ =IF(G2="□Aug",,VALUE(8))
+ =IF(G2="Aug",8)
+ =IFS(G2="Aug",8,G2="Jul",7,G2="Jun",6,G2="May",5,G2="Apr",4,G2="Mar",3,G2="Feb",2,G2="Jan",1,G2="Sep",9,G2="Oct",10,G2="Nov",11,G2="Dec",12)
+  
+  
+local <1024G|ATA>
+  /vmfs/volumes/5e66fde5-db805f42-1e4c-0ae0afa20667
+nvme <512G>
+  /vmfs/volumes/386d4582-ee3cd63c-ddff-0ae0afa20667
+KVM <nexenta|20>  
+  /vmfs/volumes/8cb232ca-48cabb4b
+  /vmfs/volumes/8cb232ca-48cabb4b/backVMs/
+ 
+esxcli software vib install -v /opt/ghettoVCB-master/vghetto-ghettoVCB.vib -f
+
+sh /opt/ghettovcb/bin/ghettoVCB.sh -f /vmfs/volumes/8cb232ca-48cabb4b/backVMs/vmlist.conf -g /vmfs/volumes/8cb232ca-48cabb4b/backVMs/ghetto.conf -l /vmfs/volumes/8cb232ca-48cabb4b/backVMs/log/$(date).log
+
+/var/spool/cron/crontabs/root
+
+kill $(cat /var/run/crond.pid)
+
+vi /etc/rc.local.d/local.sh
+
+echo "0 20 * * * sh /opt/ghettovcb/bin/ghettoVCB.sh -f /vmfs/volumes/8cb232ca-48cabb4b/backVMs/vmlist.conf -g /vmfs/volumes/8cb232ca-48cabb4b/backVMs/ghetto.conf -l /vmfs/volumes/8cb232ca-48cabb4b/backVMs/log/\$(date).log" >> /var/spool/cron/crontabs/root
+
+
+docker run -it --rm --name temp-nginx nginx:latest /bin/bash
+
+/wordpress/config/wp-content/plugins/
+/wordpress/config/wp-content/ai1wm-backups
+
+
+docker run -d --name ftpd_server -p 21:21 -p 30000-30009:30000-30009 -e "PUBLICHOST=localhost" stilliard/pure-ftpd
+
+
+cat /etc/defaults/rc.conf | grep nfsuser
+find / -iname "rc.conf.*"
+
+/etc/rc.conf.local
+/etc/rc.conf.d
+/conf/base/var/tmp/rc.conf.freenas
+/conf/base/etc/rc.conf.d
+/conf/base/etc/rc.conf.local
+
+tunables add
+
+vfs.nfs.enable_uidtostring
+vfs.nfsd.enable_stringtouid
+
+set value =0  type=sysctl
+
+sysctl -a | grep vfs.nfs
+
+sftp -P 2222 road@ftp.infowize.com.tw
+
+anydesk --get-id
+891319092 tn ipc201
+519764584 kc ipc
+985903300 ipc202
+
+
+sudo apt-get install --reinstall vino
+sudo apt-get install vino
+sudo apt install dconf-editor
+nm-connetion-editor
+
+/usr/lib/NetworkManager/conf.d/10-globally-managed-devices.conf
+unmanaged-devices=*,except:type:ethernet,except:type:wifi,except:type:wwan
+
+
+docker run -d -p 21:21 -e FTP_USER=itadm -e FTP_PASS=1qaz@WSX -e LOCAL_UMASK=077 -v /FTP/itadm:/home/vsftpd/itadm -v /FTP:/home/vsftpd --name vsftpd fauria/vsftpd
+
+sh /opt/ghettovcb/bin/ghettoVCB.sh -f /vmfs/volumes/8cb232ca-48cabb4b/backVMs/vmlist.conf -g /vmfs/volumes/8cb232ca-48cabb4b/backVMs/ghetto.conf -l /vmfs/volumes/8cb232ca-48cabb4b/backVMs/log/$(date '+%Y%m%d').log
+
+/vol2t/vmware/kvmstor
+/vol2t/stor2
+
+vim-cmd vmsvc/snapshot.create 86 $(date +%F_%H-%M)
+
+0 1-9 * * *  vim-cmd vmsvc/snapshot.create 86 $(date +%F_%H-%M)
+0 11 *  * * vim-cmd vmsvc/snapshot.removeall 86
+
+echo "0  1-11 * * *  vim-cmd vmsvc/snapshot.create 86 \$(date +%F_%H-%M)" >>/var/spool/cron/crontabs/root
+echo "0 14 * * * vim-cmd vmsvc/snapshot.removeall 86" >>/var/spool/cron/crontabs/root
+
+
+
+
+
+
+
+
